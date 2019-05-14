@@ -1,27 +1,37 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styles from './ColorPicker.css';
 
 
 export default class ColorButtons extends PureComponent {
+  state = {
+    background: ''
+  }
+
+
+
   static propTypes = {
     colors: PropTypes.array.isRequired
   }
 
   eventHandler = event => {
-    console.log(event.target.textContent);
+    this.setState({ background: event.target.textContent });
   }
 
   render() {
+    console.log('background', this.state);
+
     const colorButtons = this.props.colors.map(color => {
       return <button key={color} onClick={this.eventHandler}>{color}</button>;
     });
     return (
-      <>
+      <section className={styles.ColorButtons}>
+        <div style={this.state}></div>
         {colorButtons}
-      </>
+      </section>
     );
   }
 }
 
-//create a button for red, yellow, blue 
-//when the button is pressed console.log(the color)
+
+//styles={this.state.background}
