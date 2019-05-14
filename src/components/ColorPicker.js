@@ -4,27 +4,20 @@ import PropTypes from 'prop-types';
 
 export default class ColorButtons extends PureComponent {
   static propTypes = {
-    color: PropTypes.string.isRequired
+    colors: PropTypes.array.isRequired
   }
 
-  redHandler = () => {
-    console.log('red');
-  }
-
-  yellowHandler = () => {
-    console.log('yellow');
-  }
-
-  blueHandler = () => {
-    console.log('blue');
+  eventHandler = event => {
+    console.log(event.target.textContent);
   }
 
   render() {
+    const colorButtons = this.props.colors.map(color => {
+      return <button key={color} onClick={this.eventHandler}>{color}</button>;
+    });
     return (
       <>
-      <button onClick={this.redHandler}>Red</button>,
-      <button onClick={this.yellowHandler}>Yellow</button>,
-      <button onClick={this.blueHandler}>Blue</button>
+        {colorButtons}
       </>
     );
   }
