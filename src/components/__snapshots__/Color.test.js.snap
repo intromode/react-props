@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the color component tests the snapshot 1`] = `
+<dl
+  style={
+    Object {
+      "backgroundColor": "#9400D3",
+    }
+  }
+>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    purple
+  </dd>
+  <dt>
+    Hex
+  </dt>
+  <dd>
+    #9400D3
+  </dd>
+  <dt>
+    rgb
+  </dt>
+  <dd>
+    fkfjkdf
+  </dd>
+</dl>
+`;
