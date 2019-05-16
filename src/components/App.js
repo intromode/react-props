@@ -3,6 +3,7 @@ import ColorPicker from './ColorPicker';
 import ColorDisplay from './ColorDisplay';
 
 //why do classes have to have a render whereas functions just return?
+console.log('hi');
 
 export default class App extends PureComponent {
   state = {
